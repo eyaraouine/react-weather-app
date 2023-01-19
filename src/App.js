@@ -19,7 +19,7 @@ export default function App() {
     }
 
   return (
-      <div className={(typeof weather.main != "undefined") ? weather.weather[0].main.includes("Clouds") ? 'app clouds' : weather.weather[0].main.includes("Clear") ?'app clear' :'app snow':'app'}>
+      <div className={(typeof weather.main != "undefined") ? weather.weather[0].description.includes("clouds") ? 'app clouds' : weather.weather[0].description.includes("clear") ?'app clear' : weather.weather[0].description.includes("mist") ?'app mist': weather.weather[0].description.includes("rain") ? 'app rain':'app snow':'app'}>
     <main>
      <SearchBar
      query={query}
